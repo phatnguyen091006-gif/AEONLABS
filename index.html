@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEONLABS — AI-Powered Marketing Agency</title>
+    <meta name="description" content="AEONLABS is an AI marketing agency that turns data into results. We automate campaigns, predict trends, and grow brands with machine intelligence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" id="nav-logo">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="url(#logo-grad)" opacity="0.9"/>
+                    <path d="M2 23L16 30L30 23" stroke="url(#logo-grad)" stroke-width="2" fill="none" opacity="0.6"/>
+                    <path d="M2 16L16 23L30 16" stroke="url(#logo-grad)" stroke-width="2" fill="none" opacity="0.8"/>
+                    <defs>
+                        <linearGradient id="logo-grad" x1="2" y1="2" x2="30" y2="30">
+                            <stop offset="0%" stop-color="#6C63FF"/>
+                            <stop offset="100%" stop-color="#A78BFA"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="nav-logo-text">AEONLABS</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#insights">Insights</a></li>
+                <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="images/hero-bg.png" alt="" class="hero-bg-img">
+            <div class="hero-bg-overlay"></div>
+        </div>
+
+
+        <div class="hero-content">
+            <p class="hero-label" data-animate="fade-up">AI Marketing Agency</p>
+            <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+                Marketing<br>That Thinks<br>For You
+            </h1>
+            <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+                <strong>Less guesswork.</strong> More growth.<br>
+                AI that runs your campaigns while you sleep.
+            </p>
+            <div class="hero-cta-group" data-animate="fade-up" data-delay="300">
+                <a href="#contact" class="btn-primary" id="hero-cta">
+                    <span>Get a Free Audit</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#results" class="btn-ghost" id="hero-secondary-cta">See Results</a>
+            </div>
+            <div class="hero-scroll" data-animate="fade-up" data-delay="500">
+                <div class="scroll-line"></div>
+                <span>Scroll to explore</span>
+            </div>
+        </div>
+        <div class="hero-particles" id="hero-particles"></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-left">
+                <h2 class="section-title" data-animate="fade-up">
+                    We Make<br>
+                    Marketing<br>
+                    <span class="gradient-text">Effortless</span>
+                </h2>
+            </div>
+            <div class="about-right">
+                <div class="about-text-block" data-animate="fade-up" data-delay="100">
+                    <!-- ADHD-friendly: short paragraphs, bold key phrases, easy to scan -->
+                    <div class="about-card">
+                        <div class="about-icon">🎯</div>
+                        <p class="about-text">
+                            <strong>Your ads find the right people.</strong>
+                            Our AI studies your audience, tests thousands of variations, and puts your budget where it actually works.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">⚡</div>
+                        <p class="about-text">
+                            <strong>Campaigns launch in hours, not weeks.</strong>
+                            We automate the boring stuff — copywriting, A/B testing, bid adjustments — so you can focus on your business.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">📊</div>
+                        <p class="about-text">
+                            <strong>Real numbers. No fluff.</strong>
+                            Every dollar tracked. Every result measured. Dashboards you'll actually understand.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-image" data-animate="scale-in">
+            <!-- Custom Three.js Globe — matches site palette -->
+            <div class="globe-wrap" id="globe-container">
+                <canvas id="globe-canvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Marquee -->
+    <section class="marquee-section" id="services">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span class="marquee-item">AI Ad Campaigns</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item">SEO Automation</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item">Content Generation</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item">Social Media AI</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item">Predictive Analytics</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item">Brand Strategy</span>
+                <span class="marquee-dot">✦</span>
+                <!-- Duplicate for seamless loop -->
+                <span class="marquee-item">AI Ad Campaigns</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item">SEO Automation</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item">Content Generation</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item">Social Media AI</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item">Predictive Analytics</span>
+                <span class="marquee-dot">✦</span>
+                <span class="marquee-item">Brand Strategy</span>
+                <span class="marquee-dot">✦</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Detail Section -->
+    <section class="services-detail" id="services-detail">
+        <div class="services-inner">
+            <h2 class="section-title services-title" data-animate="fade-up">
+                What We <span class="gradient-text">Do</span>
+            </h2>
+            <p class="services-subtitle" data-animate="fade-up" data-delay="100">
+                Six things. All AI-powered. All measurable.
+            </p>
+            <div class="services-grid">
+                <div class="service-card" data-animate="fade-up" data-delay="0">
+                    <div class="service-number">01</div>
+                    <h3>AI Ad Campaigns</h3>
+                    <p>We build ads that <strong>learn and improve</strong> every hour. Your cost-per-click drops. Your conversions rise. Automatically.</p>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="80">
+                    <div class="service-number">02</div>
+                    <h3>SEO Automation</h3>
+                    <p><strong>Rank higher, faster.</strong> Our AI finds gaps your competitors miss, writes optimised content, and builds authority on autopilot.</p>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="160">
+                    <div class="service-number">03</div>
+                    <h3>Content Generation</h3>
+                    <p>Blog posts, emails, social captions — <strong>generated in your brand voice.</strong> Reviewed by humans. Published at peak engagement times.</p>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="0">
+                    <div class="service-number">04</div>
+                    <h3>Social Media AI</h3>
+                    <p><strong>Post smarter, not harder.</strong> We predict what your audience wants to see, then create and schedule it automatically.</p>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="80">
+                    <div class="service-number">05</div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Know what's coming <strong>before it happens.</strong> Trend forecasting, churn prediction, and revenue modelling — all in real-time.</p>
+                </div>
+                <div class="service-card" data-animate="fade-up" data-delay="160">
+                    <div class="service-number">06</div>
+                    <h3>Brand Strategy</h3>
+                    <p>Data-driven positioning that <strong>cuts through noise.</strong> We analyse your market, find your edge, and build a brand people remember.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results / Portfolio Section -->
+    <section class="work" id="results">
+        <div class="work-header" data-animate="fade-up">
+            <h2 class="section-title">Real <span class="gradient-text">Results</span></h2>
+            <p class="work-subtitle">Not vanity metrics. Business growth.</p>
+        </div>
+        <div class="work-grid">
+            <div class="work-card work-card-large" data-animate="fade-up">
+                <div class="work-card-img">
+                    <img src="images/portfolio-1.png" alt="AI Campaign Dashboard">
+                </div>
+                <div class="work-card-overlay">
+                    <span class="work-tag">E-Commerce</span>
+                    <h3>340% ROAS in 90 Days</h3>
+                    <p>AI-driven ad campaigns that turned $50K spend into $170K revenue</p>
+                </div>
+            </div>
+            <div class="work-card-stack">
+                <div class="work-card" data-animate="fade-up" data-delay="100">
+                    <div class="work-card-img">
+                        <img src="images/portfolio-2.png" alt="SEO Growth Chart">
+                    </div>
+                    <div class="work-card-overlay">
+                        <span class="work-tag">SaaS</span>
+                        <h3>10x Organic Traffic</h3>
+                    </div>
+                </div>
+                <div class="work-stats-card" data-animate="fade-up" data-delay="200">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="340">0</span><span class="stat-suffix">%</span>
+                            <span class="stat-label">Avg. ROAS</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="2">0</span><span class="stat-suffix">M+</span>
+                            <span class="stat-label">Leads Generated</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="85">0</span><span class="stat-suffix">%</span>
+                            <span class="stat-label">Cost Reduction</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights / Newsroom Section -->
+    <section class="newsroom" id="insights">
+        <div class="newsroom-inner">
+            <h2 class="section-title newsroom-title" data-animate="fade-up">Latest <span class="gradient-text">Insights</span></h2>
+            <p class="newsroom-subtitle" data-animate="fade-up" data-delay="50">Quick reads. Big ideas. No jargon.</p>
+            <div class="news-grid">
+                <article class="news-card" data-animate="fade-up" data-delay="0">
+                    <a href="#" class="news-card-link">
+                        <div class="news-card-img">
+                            <img src="images/news-1.png" alt="AI Marketing Trends">
+                        </div>
+                        <div class="news-card-body">
+                            <span class="news-date">April 2026</span>
+                            <h3>5 AI Marketing Trends That Will Define 2026 (And What to Do About Them)</h3>
+                            <p class="news-excerpt">The short version: personalisation at scale, zero-click search, and AI-generated video ads are here.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="news-card" data-animate="fade-up" data-delay="100">
+                    <a href="#" class="news-card-link">
+                        <div class="news-card-img">
+                            <img src="images/news-2.png" alt="ROI Guide">
+                        </div>
+                        <div class="news-card-body">
+                            <span class="news-date">March 2026</span>
+                            <h3>We Cut a Client's Ad Spend by 60% and Doubled Their Revenue. Here's How.</h3>
+                            <p class="news-excerpt">Spoiler: it wasn't magic. It was better data, smarter targeting, and AI that doesn't sleep.</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-cta" data-animate="fade-up">
+            <div class="footer-cta-inner">
+                <div class="footer-sphere-wrap">
+                    <div class="footer-sphere">
+                        <img src="images/about-sphere.png" alt="">
+                    </div>
+                </div>
+                <h2 class="footer-cta-text">
+                    Ready to stop guessing and start growing?<br>
+                    <span class="gradient-text">Let's build your AI marketing engine.</span>
+                </h2>
+                <a href="mailto:hello@aeonlabs.ai" class="btn-primary" id="cta-button">
+                    <span>Book a Free Call</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner">
+                <div class="footer-logo">
+                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                        <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="url(#logo-grad2)" opacity="0.9"/>
+                        <path d="M2 23L16 30L30 23" stroke="url(#logo-grad2)" stroke-width="2" fill="none" opacity="0.6"/>
+                        <path d="M2 16L16 23L30 16" stroke="url(#logo-grad2)" stroke-width="2" fill="none" opacity="0.8"/>
+                        <defs>
+                            <linearGradient id="logo-grad2" x1="2" y1="2" x2="30" y2="30">
+                                <stop offset="0%" stop-color="#6C63FF"/>
+                                <stop offset="100%" stop-color="#A78BFA"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="footer-logo-text">AEONLABS</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">Contact</a>
+                </div>
+                <p class="footer-copy">&copy; 2026 AEONLABS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom globe (zero dependencies) -->
+    <script src="globe.js"></script>
+    <script src="script.js"></script>
+    <!-- AI Chat Widget -->
+    <script src="chatbot.js"></script>
+</body>
+</html>
