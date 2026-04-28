@@ -9,7 +9,7 @@
 var BIZ = {
   name: 'AEONLABS',
   tagline: 'AI-Powered Marketing Agency',
-  email: 'hello@aeonlabs.ai',
+  email: 'phatnguyen091006@gmail.com',
   services: [
     {name:'AI Ad Campaigns', desc:'Ads that learn and improve every hour. Your cost-per-click drops, conversions rise — automatically.'},
     {name:'SEO Automation', desc:'Rank higher, faster. Our AI finds gaps competitors miss, writes optimised content, and builds authority on autopilot.'},
