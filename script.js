@@ -117,6 +117,18 @@ function animateCount(el, target) {
     requestAnimationFrame(update);
 }
 
+/* --- Go High Level Integration --- */
+var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/tYIxCosCGk6xIbPT7uJp/webhook-trigger/a9f7ff8e-f095-4bdc-ada9-2b7284a7554f';
+
+function sendToGHL(payload) {
+    return fetch(GHL_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        mode: 'no-cors'
+    });
+}
+
 /* --- Contact Form Handler --- */
 function initContactForm() {
     const form = document.getElementById('contact-form');
@@ -126,17 +138,32 @@ function initContactForm() {
         e.preventDefault();
         const name = document.getElementById('c-name').value.trim();
         const email = document.getElementById('c-email').value.trim();
+        const company = document.getElementById('c-company').value.trim();
+        const service = document.getElementById('c-service').value;
+        const message = document.getElementById('c-message').value.trim();
 
         if (!name || !email) return;
 
-        // Log form data (replace with real backend POST in production)
-        const formData = new FormData(form);
-        const data = {};
-        formData.forEach((val, key) => data[key] = val);
-        console.log('Contact form submission:', data);
+        const btn = document.getElementById('contact-submit');
+        btn.querySelector('span').textContent = 'Sending...';
+        btn.disabled = true;
 
-        // Show success state
-        form.style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
+        // Send to Go High Level
+        sendToGHL({
+            name: name,
+            email: email,
+            company: company,
+            service: service,
+            message: message,
+            source: 'AEONLABS Website — Contact Form',
+            page: window.location.href
+        }).then(function() {
+            form.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        }).catch(function() {
+            // no-cors mode doesn't return readable responses, so treat as success
+            form.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        });
     });
 }

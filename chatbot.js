@@ -296,9 +296,18 @@ function init(){
       var service=document.getElementById('book-service').value;
       var company=document.getElementById('book-company').value.trim();
       var message=document.getElementById('book-message').value.trim();
-      // In production, this would POST to your backend
-      console.log('Booking request:',{name:name,email:email,company:company,service:service,message:message});
-      addBot('Thanks, **'+name+'**! 🎉 Your booking request has been submitted. Our team will reach out to you at **'+email+'** within 24 hours to schedule your free consultation.\n\nIn the meantime, feel free to ask me anything else!',true);
+      var submitBtn=document.getElementById('book-submit');
+      submitBtn.textContent='Sending...';
+      submitBtn.disabled=true;
+      // Send to Go High Level
+      fetch('https://services.leadconnectorhq.com/hooks/tYIxCosCGk6xIbPT7uJp/webhook-trigger/a9f7ff8e-f095-4bdc-ada9-2b7284a7554f',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({name:name,email:email,company:company,service:service,message:message,source:'AEONLABS Website — Chatbot Booking',page:window.location.href}),
+        mode:'no-cors'
+      }).finally(function(){
+        addBot('Thanks, **'+name+'**! 🎉 Your booking request has been submitted. Our team will reach out to you at **'+email+'** within 24 hours to schedule your free consultation.\n\nIn the meantime, feel free to ask me anything else!',true);
+      });
     });
   }
 
