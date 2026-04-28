@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initParticles();
     initCountUp();
-    initSmoothScroll();
+    initContactForm();
 });
 
 /* --- Navbar Scroll Effect --- */
@@ -15,6 +15,7 @@ function initNavbar() {
     const navbar = document.getElementById('navbar');
     const toggle = document.getElementById('nav-toggle');
     const links = document.getElementById('nav-links');
+    if (!navbar || !toggle || !links) return;
 
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 80);
@@ -36,6 +37,7 @@ function initNavbar() {
 /* --- Scroll-triggered Animations --- */
 function initScrollAnimations() {
     const elements = document.querySelectorAll('[data-animate]');
+    if (!elements.length) return;
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -84,6 +86,7 @@ function initParticles() {
 /* --- Count-up Animation --- */
 function initCountUp() {
     const counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -114,18 +117,26 @@ function animateCount(el, target) {
     requestAnimationFrame(update);
 }
 
-/* --- Smooth Scroll --- */
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const offset = 80;
-                const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-            }
-        });
+/* --- Contact Form Handler --- */
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = document.getElementById('c-name').value.trim();
+        const email = document.getElementById('c-email').value.trim();
+
+        if (!name || !email) return;
+
+        // Log form data (replace with real backend POST in production)
+        const formData = new FormData(form);
+        const data = {};
+        formData.forEach((val, key) => data[key] = val);
+        console.log('Contact form submission:', data);
+
+        // Show success state
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
     });
 }
-
