@@ -25,7 +25,7 @@ var BIZ = {
   faq: [
     {q:'How is this different from a normal agency?', a:'We use AI to automate and optimize everything — from ad copy to bid management. This means faster results, lower costs, and 24/7 optimization that human teams can\'t match.'},
     {q:'Do I need a big budget?', a:'No. Our AI is designed to maximize ROI regardless of budget. We\'ve helped startups with $1K/month budgets and enterprises with $500K+.'},
-    {q:'What industries do you work with?', a:'E-commerce, SaaS, fintech, healthcare, real estate, education, and more. Our AI adapts to any industry.'},
+    {q:'What industries do you work with?', a:'E-commerce, SaaS, fintech, healthcare, real estate, education, and more. We\\\'re based in Melbourne and work with local and Australian businesses.'},
     {q:'How do you measure success?', a:'Real business metrics: revenue, leads, cost-per-acquisition, ROAS. We set clear KPIs upfront and report monthly.'}
   ]
 };
