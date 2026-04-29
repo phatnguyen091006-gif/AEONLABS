@@ -118,7 +118,7 @@ function animateCount(el, target) {
 }
 
 /* --- Go High Level Integration --- */
-var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/tYIxCosCGk6xIbPT7uJp/webhook-trigger/c6949617-2508-4085-b6db-1464aa7aeb7d';
+var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/tYIxCosCGk6xIbPT7uJp/webhook-trigger/c73f09d3-5d8e-4bd7-80f7-cfc428501426';
 
 function sendToGHL(payload) {
     return fetch(GHL_WEBHOOK, {

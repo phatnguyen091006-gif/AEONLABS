@@ -300,7 +300,7 @@ function init(){
       submitBtn.textContent='Sending...';
       submitBtn.disabled=true;
       // Send to Go High Level
-      fetch('https://services.leadconnectorhq.com/hooks/tYIxCosCGk6xIbPT7uJp/webhook-trigger/c6949617-2508-4085-b6db-1464aa7aeb7d',{
+      fetch('https://services.leadconnectorhq.com/hooks/tYIxCosCGk6xIbPT7uJp/webhook-trigger/c73f09d3-5d8e-4bd7-80f7-cfc428501426',{
         method:'POST',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({name:name,email:email,company:company,service:service,message:message,source:'AEONLABS Website — Chatbot Booking',page:window.location.href}),
