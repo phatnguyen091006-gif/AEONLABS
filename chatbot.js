@@ -94,35 +94,35 @@ function init(){
   // Inject CSS
   var style=document.createElement('style');
   style.textContent='\
-.aeon-chat-fab{position:fixed;bottom:28px;right:28px;z-index:9999;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#6C63FF,#A78BFA,#3B82F6);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 30px rgba(108,99,255,0.4);transition:all .3s cubic-bezier(.16,1,.3,1);}\
-.aeon-chat-fab:hover{transform:scale(1.08);box-shadow:0 8px 40px rgba(108,99,255,0.55);}\
+.aeon-chat-fab{position:fixed;bottom:28px;right:28px;z-index:9999;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#E8672A,#F4A63A,#FF8C42);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 30px rgba(232,103,42,0.4);transition:all .3s cubic-bezier(.16,1,.3,1);}\
+.aeon-chat-fab:hover{transform:scale(1.08);box-shadow:0 8px 40px rgba(232,103,42,0.55);}\
 .aeon-chat-fab svg{width:28px;height:28px;fill:white;transition:transform .3s;}\
 .aeon-chat-fab.open svg{transform:rotate(90deg);}\
-.aeon-chat-fab .fab-ping{position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(108,99,255,0.5);animation:fab-ping 2s infinite;}\
+.aeon-chat-fab .fab-ping{position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(232,103,42,0.5);animation:fab-ping 2s infinite;}\
 @keyframes fab-ping{0%{transform:scale(1);opacity:1}100%{transform:scale(1.5);opacity:0}}\
 \
-.aeon-chat-window{position:fixed;bottom:100px;right:28px;z-index:9998;width:380px;max-height:560px;border-radius:20px;background:rgba(10,10,26,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 40px rgba(108,99,255,0.08);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(20px) scale(0.95);pointer-events:none;transition:all .35s cubic-bezier(.16,1,.3,1);}\
+.aeon-chat-window{position:fixed;bottom:100px;right:28px;z-index:9998;width:380px;max-height:560px;border-radius:20px;background:rgba(10,10,26,0.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.06);box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 40px rgba(232,103,42,0.08);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(20px) scale(0.95);pointer-events:none;transition:all .35s cubic-bezier(.16,1,.3,1);}\
 .aeon-chat-window.visible{opacity:1;transform:translateY(0) scale(1);pointer-events:auto;}\
 \
-.aeon-chat-header{padding:20px;background:linear-gradient(135deg,rgba(108,99,255,0.12),rgba(59,130,246,0.08));border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:12px;flex-shrink:0;}\
-.aeon-chat-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#6C63FF,#A78BFA);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}\
+.aeon-chat-header{padding:20px;background:linear-gradient(135deg,rgba(232,103,42,0.12),rgba(255,140,66,0.08));border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:12px;flex-shrink:0;}\
+.aeon-chat-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#E8672A,#F4A63A);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}\
 .aeon-chat-header-text h4{font-family:"Outfit",sans-serif;font-size:15px;font-weight:600;color:#f0f0f5;margin:0;}\
 .aeon-chat-header-text p{font-size:11px;color:rgba(240,240,245,0.5);margin:2px 0 0;}\
-.aeon-chat-status{width:7px;height:7px;border-radius:50%;background:#4ade80;margin-left:auto;flex-shrink:0;box-shadow:0 0 8px rgba(74,222,128,0.4);}\
+.aeon-chat-status{width:7px;height:7px;border-radius:50%;background:#F4A63A;margin-left:auto;flex-shrink:0;box-shadow:0 0 8px rgba(244,166,58,0.4);}\
 \
 .aeon-chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;min-height:250px;max-height:360px;}\
 .aeon-chat-messages::-webkit-scrollbar{width:4px;}\
-.aeon-chat-messages::-webkit-scrollbar-thumb{background:rgba(108,99,255,0.3);border-radius:4px;}\
+.aeon-chat-messages::-webkit-scrollbar-thumb{background:rgba(232,103,42,0.3);border-radius:4px;}\
 \
 .aeon-msg{max-width:85%;padding:12px 16px;border-radius:16px;font-size:13px;line-height:1.6;animation:msg-in .3s ease-out;}\
 @keyframes msg-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}\
-.aeon-msg.bot{align-self:flex-start;background:rgba(108,99,255,0.1);border:1px solid rgba(108,99,255,0.12);color:rgba(240,240,245,0.85);border-bottom-left-radius:4px;}\
-.aeon-msg.user{align-self:flex-end;background:linear-gradient(135deg,#6C63FF,#3B82F6);color:white;border-bottom-right-radius:4px;}\
-.aeon-msg strong{color:#A78BFA;}\
+.aeon-msg.bot{align-self:flex-start;background:rgba(232,103,42,0.1);border:1px solid rgba(232,103,42,0.12);color:rgba(240,240,245,0.85);border-bottom-left-radius:4px;}\
+.aeon-msg.user{align-self:flex-end;background:linear-gradient(135deg,#E8672A,#FF8C42);color:white;border-bottom-right-radius:4px;}\
+.aeon-msg strong{color:#F4A63A;}\
 .aeon-msg.user strong{color:white;}\
 \
 .aeon-msg.typing .dot-loader{display:flex;gap:4px;padding:4px 0;}\
-.aeon-msg.typing .dot-loader span{width:6px;height:6px;border-radius:50%;background:rgba(167,139,250,0.6);animation:typing-dot 1.2s infinite;}\
+.aeon-msg.typing .dot-loader span{width:6px;height:6px;border-radius:50%;background:rgba(244,166,58,0.6);animation:typing-dot 1.2s infinite;}\
 .aeon-msg.typing .dot-loader span:nth-child(2){animation-delay:.2s;}\
 .aeon-msg.typing .dot-loader span:nth-child(3){animation-delay:.4s;}\
 @keyframes typing-dot{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-4px)}}\
@@ -130,23 +130,23 @@ function init(){
 .aeon-chat-input-wrap{padding:12px 16px;border-top:1px solid rgba(255,255,255,0.06);display:flex;gap:8px;align-items:center;flex-shrink:0;background:rgba(5,5,16,0.5);}\
 .aeon-chat-input{flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:10px 14px;color:#f0f0f5;font-family:"Inter",sans-serif;font-size:13px;outline:none;transition:border-color .3s;}\
 .aeon-chat-input::placeholder{color:rgba(240,240,245,0.3);}\
-.aeon-chat-input:focus{border-color:rgba(108,99,255,0.4);}\
-.aeon-chat-send{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#6C63FF,#3B82F6);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;flex-shrink:0;}\
-.aeon-chat-send:hover{transform:scale(1.08);box-shadow:0 4px 16px rgba(108,99,255,0.4);}\
+.aeon-chat-input:focus{border-color:rgba(232,103,42,0.4);}\
+.aeon-chat-send{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#E8672A,#FF8C42);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;flex-shrink:0;}\
+.aeon-chat-send:hover{transform:scale(1.08);box-shadow:0 4px 16px rgba(232,103,42,0.4);}\
 .aeon-chat-send svg{width:16px;height:16px;fill:white;}\
 \
 .aeon-booking-form{padding:4px 0;}\
 .aeon-booking-form input,.aeon-booking-form select,.aeon-booking-form textarea{width:100%;padding:9px 12px;margin:4px 0;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);color:#f0f0f5;font-family:"Inter",sans-serif;font-size:12px;outline:none;transition:border-color .3s;}\
-.aeon-booking-form input:focus,.aeon-booking-form select:focus,.aeon-booking-form textarea:focus{border-color:rgba(108,99,255,0.4);}\
+.aeon-booking-form input:focus,.aeon-booking-form select:focus,.aeon-booking-form textarea:focus{border-color:rgba(232,103,42,0.4);}\
 .aeon-booking-form select{appearance:none;-webkit-appearance:none;}\
 .aeon-booking-form select option{background:#0d0d20;color:#f0f0f5;}\
 .aeon-booking-form textarea{resize:none;height:50px;}\
-.aeon-booking-submit{width:100%;padding:10px;margin-top:6px;border-radius:10px;border:none;background:linear-gradient(135deg,#6C63FF,#3B82F6);color:white;font-family:"Inter",sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .3s;}\
-.aeon-booking-submit:hover{box-shadow:0 6px 20px rgba(108,99,255,0.35);}\
+.aeon-booking-submit{width:100%;padding:10px;margin-top:6px;border-radius:10px;border:none;background:linear-gradient(135deg,#E8672A,#FF8C42);color:white;font-family:"Inter",sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all .3s;}\
+.aeon-booking-submit:hover{box-shadow:0 6px 20px rgba(232,103,42,0.35);}\
 \
 .aeon-quick-btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}\
-.aeon-quick-btn{padding:6px 12px;border-radius:20px;border:1px solid rgba(108,99,255,0.2);background:rgba(108,99,255,0.06);color:rgba(240,240,245,0.7);font-size:11px;cursor:pointer;transition:all .3s;font-family:"Inter",sans-serif;}\
-.aeon-quick-btn:hover{background:rgba(108,99,255,0.15);border-color:rgba(108,99,255,0.4);color:#f0f0f5;}\
+.aeon-quick-btn{padding:6px 12px;border-radius:20px;border:1px solid rgba(232,103,42,0.2);background:rgba(232,103,42,0.06);color:rgba(240,240,245,0.7);font-size:11px;cursor:pointer;transition:all .3s;font-family:"Inter",sans-serif;}\
+.aeon-quick-btn:hover{background:rgba(232,103,42,0.15);border-color:rgba(232,103,42,0.4);color:#f0f0f5;}\
 \
 @media(max-width:480px){.aeon-chat-window{width:calc(100vw - 20px);right:10px;bottom:90px;max-height:70vh;}.aeon-chat-fab{bottom:18px;right:18px;}}\
 ';
@@ -299,12 +299,12 @@ function init(){
       var submitBtn=document.getElementById('book-submit');
       submitBtn.textContent='Sending...';
       submitBtn.disabled=true;
-      // Send to Go High Level
-      fetch('https://services.leadconnectorhq.com/hooks/tYIxCosCGk6xIbPT7uJp/webhook-trigger/c73f09d3-5d8e-4bd7-80f7-cfc428501426',{
+      // Send to n8n webhook (replace URL with your n8n endpoint)
+      var N8N_WEBHOOK = 'YOUR_N8N_WEBHOOK_URL_HERE';
+      fetch(N8N_WEBHOOK,{
         method:'POST',
         headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({name:name,email:email,company:company,service:service,message:message,source:'AEONLABS Website — Chatbot Booking',page:window.location.href}),
-        mode:'no-cors'
+        body:JSON.stringify({name:name,email:email,company:company,service:service,message:message,source:'AEONLABS Website — Chatbot Booking',page:window.location.href})
       }).finally(function(){
         addBot('Thanks, **'+name+'**! 🎉 Your booking request has been submitted. Our team will reach out to you at **'+email+'** within 24 hours to schedule your free consultation.\n\nIn the meantime, feel free to ask me anything else!',true);
       });

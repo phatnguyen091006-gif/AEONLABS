@@ -1,6 +1,7 @@
 (function(){
 'use strict';
-var P={r:108,g:99,b:255},V={r:167,g:139,b:250},B={r:59,g:130,b:246},W={r:220,g:220,b:255},pals=[P,V,B];
+window.GLOBE_ENABLED = true;
+var P={r:232,g:103,b:42},V={r:244,g:166,b:58},B={r:255,g:140,b:66},W={r:255,g:220,b:180},pals=[P,V,B];
 function rgba(c,a){return'rgba('+c.r+','+c.g+','+c.b+','+a+')';}
 
 // Continent data (compact: lat,lon pairs flattened)
@@ -307,6 +308,7 @@ function drawOrbital(t){
 var rotY=0,lastT=Date.now();
 function animate(){
   requestAnimationFrame(animate);
+  if(!window.GLOBE_ENABLED) return;
   var now=Date.now(),dt=Math.min((now-lastT)/1000,0.1);lastT=now;
   var t=now/1000;rotY+=dt*0.12;
   var br=1+Math.sin(t*0.5)*0.005;

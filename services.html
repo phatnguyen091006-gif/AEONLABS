@@ -4,117 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services — AEONLABS | AI Marketing Solutions</title>
-    <meta name="description" content="Explore AEONLABS' six AI-powered marketing services: Ad Campaigns, SEO Automation, Content Generation, Social Media AI, Predictive Analytics, and Brand Strategy.">
+    <meta name="description" content="Explore AEONLABS' AI-powered marketing modules: Neural Audience Engine, Autonomous Content Pipeline, Conversational Conversion, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar--solid" id="navbar">
+    <nav class="nav scrolled" id="navbar">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo" id="nav-logo">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path d="M16 2L2 9L16 16L30 9L16 2Z" fill="url(#logo-grad)" opacity="0.9"/>
-                    <path d="M2 23L16 30L30 23" stroke="url(#logo-grad)" stroke-width="2" fill="none" opacity="0.6"/>
-                    <path d="M2 16L16 23L30 16" stroke="url(#logo-grad)" stroke-width="2" fill="none" opacity="0.8"/>
-                    <defs><linearGradient id="logo-grad" x1="2" y1="2" x2="30" y2="30"><stop offset="0%" stop-color="#6C63FF"/><stop offset="100%" stop-color="#A78BFA"/></linearGradient></defs>
-                </svg>
-                <span class="nav-logo-text">AEONLABS</span>
-            </a>
+            <a href="index.html" class="nav-logo"><div class="nav-logo-icon">A</div><span>AEONLABS</span></a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="results.html">Results</a></li>
-                <li><a href="insights.html">Insights</a></li>
-                <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
+                <li><a href="case-studies.html">Case Studies</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="nav-cta-link">Contact</a></li>
             </ul>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu"><span></span><span></span></button>
         </div>
     </nav>
 
-    <!-- Page Hero -->
     <section class="page-hero">
-        <div class="page-hero-inner">
-            <p class="hero-label" data-animate="fade-up">Our Services</p>
-            <h1 class="page-hero-title" data-animate="fade-up" data-delay="100">
-                What We <span class="gradient-text">Do</span>
-            </h1>
-            <p class="page-hero-sub" data-animate="fade-up" data-delay="200">
-                Six AI-powered services. All measurable. All designed to grow your business.
-            </p>
+        <div class="container">
+            <p class="page-hero-label" data-animate="fade-up">THE AEON STACK</p>
+            <h1 class="page-hero-title" data-animate="fade-up">Our Services</h1>
+            <p class="page-hero-sub" data-animate="fade-up">Modular intelligence for high-stakes growth. Deploy specific modules or the full AEON stack.</p>
         </div>
     </section>
 
-    <!-- Services Detail -->
-    <section class="services-detail">
-        <div class="services-inner">
-            <div class="services-grid">
-                <div class="service-card" data-animate="fade-up" data-delay="0">
-                    <div class="service-number">01</div>
-                    <h3>AI Ad Campaigns</h3>
-                    <p>We build ads that <strong>learn and improve</strong> every hour. Your cost-per-click drops. Your conversions rise. Automatically.</p>
+    <section class="capabilities" id="services-all">
+        <div class="container">
+            <div class="cap-grid" data-animate="fade-up">
+                <div class="cap-card">
+                    <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+                    <h3>Neural Audience Engine</h3>
+                    <p>Deep learning models that identify, segment, and predict high-value audience behaviour before competitors can react.</p>
+                    <div class="cap-card-line"></div>
                 </div>
-                <div class="service-card" data-animate="fade-up" data-delay="80">
-                    <div class="service-number">02</div>
-                    <h3>SEO Automation</h3>
-                    <p><strong>Rank higher, faster.</strong> Our AI finds gaps your competitors miss, writes optimised content, and builds authority on autopilot.</p>
+                <div class="cap-card">
+                    <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"/></svg></div>
+                    <h3>Autonomous Content Pipeline</h3>
+                    <p>End-to-end content generation and distribution using custom LLMs trained on your brand's DNA.</p>
+                    <div class="cap-card-line"></div>
                 </div>
-                <div class="service-card" data-animate="fade-up" data-delay="160">
-                    <div class="service-number">03</div>
-                    <h3>Content Generation</h3>
-                    <p>Blog posts, emails, social captions — <strong>generated in your brand voice.</strong> Reviewed by humans. Published at peak engagement times.</p>
+                <div class="cap-card">
+                    <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
+                    <h3>Conversational Conversion</h3>
+                    <p>Intelligent agents that nurture leads 24/7 across every touchpoint.</p>
+                    <div class="cap-card-line"></div>
                 </div>
-                <div class="service-card" data-animate="fade-up" data-delay="0">
-                    <div class="service-number">04</div>
-                    <h3>Social Media AI</h3>
-                    <p><strong>Post smarter, not harder.</strong> We predict what your audience wants to see, then create and schedule it automatically.</p>
+                <div class="cap-card">
+                    <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z"/></svg></div>
+                    <h3>Predictive Market Radar</h3>
+                    <p>Real-time market intelligence that detects trend shifts before they happen.</p>
+                    <div class="cap-card-line"></div>
                 </div>
-                <div class="service-card" data-animate="fade-up" data-delay="80">
-                    <div class="service-number">05</div>
-                    <h3>Predictive Analytics</h3>
-                    <p>Know what's coming <strong>before it happens.</strong> Trend forecasting, churn prediction, and revenue modelling — all in real-time.</p>
+                <div class="cap-card">
+                    <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                    <h3>Autonomous Ad Orchestration</h3>
+                    <p>Self-optimising campaign systems across Google, Meta, LinkedIn, and TikTok that learn in real-time.</p>
+                    <div class="cap-card-line"></div>
                 </div>
-                <div class="service-card" data-animate="fade-up" data-delay="160">
-                    <div class="service-number">06</div>
-                    <h3>Brand Strategy</h3>
-                    <p>Data-driven positioning that <strong>cuts through noise.</strong> We analyse your market, find your edge, and build a brand people remember.</p>
+                <div class="cap-card">
+                    <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <h3>Attribution Oracle</h3>
+                    <p>Multi-touch attribution that actually works, revealing the true path to purchase.</p>
+                    <div class="cap-card-line"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Banner -->
-    <section class="page-cta-banner" data-animate="fade-up">
-        <div class="page-cta-inner">
-            <h2>Ready to put AI to work for your brand?</h2>
-            <a href="contact.html" class="btn-primary">
-                <span>Get a Free Audit</span>
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title" data-animate="fade-up">Ready to deploy<br>the AEON stack?</h2>
+            <a href="contact.html" class="cta-btn" data-animate="fade-up">
+                <span>Book a Strategy Call</span>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-bottom">
-            <div class="footer-bottom-inner">
-                <div class="footer-logo">
-                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M16 2L2 9L16 16L30 9L16 2Z" fill="url(#logo-grad2)" opacity="0.9"/><path d="M2 23L16 30L30 23" stroke="url(#logo-grad2)" stroke-width="2" fill="none" opacity="0.6"/><path d="M2 16L16 23L30 16" stroke="url(#logo-grad2)" stroke-width="2" fill="none" opacity="0.8"/><defs><linearGradient id="logo-grad2" x1="2" y1="2" x2="30" y2="30"><stop offset="0%" stop-color="#6C63FF"/><stop offset="100%" stop-color="#A78BFA"/></linearGradient></defs></svg>
-                    <span class="footer-logo-text">AEONLABS</span>
-                </div>
-                <div class="footer-links">
-                    <a href="services.html">Services</a>
-                    <a href="results.html">Results</a>
-                    <a href="insights.html">Insights</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <p class="footer-copy">&copy; 2026 AEONLABS. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo"><div class="nav-logo-icon" style="width:32px;height:32px;border-radius:8px;font-size:13px;">A</div><span>AEONLABS</span></div>
+                <div class="footer-links"><a href="services.html">Services</a><a href="case-studies.html">Case Studies</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+                <p class="footer-copy">&copy; 2026 AEONLABS</p>
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
-    <script src="chatbot.js"></script>
+    <script src="script.js"></script><script src="spline-loader.js"></script><script src="chatbot.js"></script>
 </body>
 </html>

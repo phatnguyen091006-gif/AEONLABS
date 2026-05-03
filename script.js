@@ -1,16 +1,14 @@
 /* ===================================
-   AEONLABS AI Marketing — Scripts
+   AEONLABS — Scripts v2
    =================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initScrollAnimations();
-    initParticles();
-    initCountUp();
     initContactForm();
 });
 
-/* --- Navbar Scroll Effect --- */
+/* --- Navbar --- */
 function initNavbar() {
     const navbar = document.getElementById('navbar');
     const toggle = document.getElementById('nav-toggle');
@@ -18,7 +16,7 @@ function initNavbar() {
     if (!navbar || !toggle || !links) return;
 
     window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 80);
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
     });
 
     toggle.addEventListener('click', () => {
@@ -34,7 +32,7 @@ function initNavbar() {
     });
 }
 
-/* --- Scroll-triggered Animations --- */
+/* --- Scroll Animations --- */
 function initScrollAnimations() {
     const elements = document.querySelectorAll('[data-animate]');
     if (!elements.length) return;
@@ -50,86 +48,25 @@ function initScrollAnimations() {
             }
         });
     }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
     });
 
     elements.forEach(el => observer.observe(el));
 }
 
-/* --- Hero Particles --- */
-function initParticles() {
-    const container = document.getElementById('hero-particles');
-    if (!container) return;
+/* --- n8n Webhook --- */
+var N8N_WEBHOOK = 'YOUR_N8N_WEBHOOK_URL_HERE';
 
-    for (let i = 0; i < 40; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-
-        const x = Math.random() * 100;
-        const y = 50 + Math.random() * 50;
-        const size = 1 + Math.random() * 2;
-        const duration = 5 + Math.random() * 8;
-        const delay = Math.random() * 8;
-
-        particle.style.left = `${x}%`;
-        particle.style.top = `${y}%`;
-        particle.style.width = `${size}px`;
-        particle.style.height = `${size}px`;
-        particle.style.animationDuration = `${duration}s`;
-        particle.style.animationDelay = `${delay}s`;
-
-        container.appendChild(particle);
-    }
-}
-
-/* --- Count-up Animation --- */
-function initCountUp() {
-    const counters = document.querySelectorAll('[data-count]');
-    if (!counters.length) return;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                const target = parseInt(el.getAttribute('data-count'));
-                animateCount(el, target);
-                observer.unobserve(el);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    counters.forEach(counter => observer.observe(counter));
-}
-
-function animateCount(el, target) {
-    const duration = 2000;
-    const startTime = performance.now();
-
-    function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(eased * target);
-        if (progress < 1) requestAnimationFrame(update);
-    }
-
-    requestAnimationFrame(update);
-}
-
-/* --- Go High Level Integration --- */
-var GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/tYIxCosCGk6xIbPT7uJp/webhook-trigger/c73f09d3-5d8e-4bd7-80f7-cfc428501426';
-
-function sendToGHL(payload) {
-    return fetch(GHL_WEBHOOK, {
+function sendToWebhook(payload) {
+    return fetch(N8N_WEBHOOK, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-        mode: 'no-cors'
+        body: JSON.stringify(payload)
     });
 }
 
-/* --- Contact Form Handler --- */
+/* --- Contact Form --- */
 function initContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
@@ -148,20 +85,14 @@ function initContactForm() {
         btn.querySelector('span').textContent = 'Sending...';
         btn.disabled = true;
 
-        // Send to Go High Level
-        sendToGHL({
-            name: name,
-            email: email,
-            company: company,
-            service: service,
-            message: message,
+        sendToWebhook({
+            name, email, company, service, message,
             source: 'AEONLABS Website — Contact Form',
             page: window.location.href
         }).then(function() {
             form.style.display = 'none';
             document.getElementById('form-success').style.display = 'block';
         }).catch(function() {
-            // no-cors mode doesn't return readable responses, so treat as success
             form.style.display = 'none';
             document.getElementById('form-success').style.display = 'block';
         });

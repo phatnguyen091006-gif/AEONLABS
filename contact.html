@@ -3,122 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — AEONLABS | Book a Free Consultation</title>
-    <meta name="description" content="Get in touch with AEONLABS. Book a free AI marketing consultation and discover how we can grow your business.">
+    <title>Contact — AEONLABS | Book a Strategy Call</title>
+    <meta name="description" content="Get in touch with AEONLABS. Book a free AI marketing strategy session for your Melbourne business.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar--solid" id="navbar">
+    <nav class="nav scrolled" id="navbar">
         <div class="nav-inner">
-            <a href="index.html" class="nav-logo" id="nav-logo">
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 2L2 9L16 16L30 9L16 2Z" fill="url(#logo-grad)" opacity="0.9"/><path d="M2 23L16 30L30 23" stroke="url(#logo-grad)" stroke-width="2" fill="none" opacity="0.6"/><path d="M2 16L16 23L30 16" stroke="url(#logo-grad)" stroke-width="2" fill="none" opacity="0.8"/><defs><linearGradient id="logo-grad" x1="2" y1="2" x2="30" y2="30"><stop offset="0%" stop-color="#6C63FF"/><stop offset="100%" stop-color="#A78BFA"/></linearGradient></defs></svg>
-                <span class="nav-logo-text">AEONLABS</span>
-            </a>
+            <a href="index.html" class="nav-logo"><div class="nav-logo-icon">A</div><span>AEONLABS</span></a>
             <ul class="nav-links" id="nav-links">
                 <li><a href="services.html">Services</a></li>
-                <li><a href="results.html">Results</a></li>
-                <li><a href="insights.html">Insights</a></li>
-                <li><a href="contact.html" class="nav-cta active">Let's Talk</a></li>
+                <li><a href="case-studies.html">Case Studies</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="nav-cta-link active">Contact</a></li>
             </ul>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu"><span></span><span></span></button>
         </div>
     </nav>
 
-    <!-- Page Hero -->
     <section class="page-hero">
-        <div class="page-hero-inner">
-            <p class="hero-label" data-animate="fade-up">Get In Touch</p>
-            <h1 class="page-hero-title" data-animate="fade-up" data-delay="100">
-                Let's <span class="gradient-text">Talk</span>
-            </h1>
-            <p class="page-hero-sub" data-animate="fade-up" data-delay="200">
-                Book a free consultation. No commitment, no pressure — just ideas.
-            </p>
+        <div class="container">
+            <p class="page-hero-label" data-animate="fade-up">GET IN TOUCH</p>
+            <h1 class="page-hero-title" data-animate="fade-up">Let's Talk</h1>
+            <p class="page-hero-sub" data-animate="fade-up">Book a free strategy session. No commitment, no pressure — just ideas.</p>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section">
-        <div class="contact-grid">
-            <!-- Contact Form -->
-            <div class="contact-form-wrap" data-animate="fade-up">
-                <h2>Send Us a Message</h2>
-                <div class="ghl-form-container">
-                    <iframe
-                        src="https://api.leadconnectorhq.com/widget/form/ROt1ZMWJJzhngxcMs2H4"
-                        style="width:100%;height:100%;border:none;border-radius:8px"
-                        id="inline-ROt1ZMWJJzhngxcMs2H4"
-                        data-layout="{'id':'INLINE'}"
-                        data-trigger-type="alwaysShow"
-                        data-trigger-value=""
-                        data-activation-type="alwaysActivated"
-                        data-activation-value=""
-                        data-deactivation-type="neverDeactivate"
-                        data-deactivation-value=""
-                        data-form-name="Form 7"
-                        data-height="761"
-                        data-layout-iframe-id="inline-ROt1ZMWJJzhngxcMs2H4"
-                        data-form-id="ROt1ZMWJJzhngxcMs2H4"
-                        title="Contact Form"
-                    ></iframe>
-                    <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-form" data-animate="fade-up">
+                    <h2>Send Us a Message</h2>
+                    <div class="native-form-container">
+                        <form id="contact-form">
+                            <div class="form-group"><input type="text" id="c-name" placeholder="Your name *" required></div>
+                            <div class="form-group"><input type="email" id="c-email" placeholder="Email address *" required></div>
+                            <div class="form-group"><input type="text" id="c-company" placeholder="Company name"></div>
+                            <div class="form-group">
+                                <select id="c-service">
+                                    <option value="">Select a module...</option>
+                                    <option>Neural Audience Engine</option>
+                                    <option>Autonomous Content Pipeline</option>
+                                    <option>Conversational Conversion</option>
+                                    <option>Predictive Market Radar</option>
+                                    <option>Autonomous Ad Orchestration</option>
+                                    <option>Attribution Oracle</option>
+                                    <option>Full AEON Stack</option>
+                                    <option>Not sure — need advice</option>
+                                </select>
+                            </div>
+                            <div class="form-group"><textarea id="c-message" rows="4" placeholder="Tell us about your business goals..."></textarea></div>
+                            <button type="submit" class="form-submit" id="contact-submit"><span>Send Message</span></button>
+                        </form>
+                        <div id="form-success" style="display:none;text-align:center;padding:40px;">
+                            <h3 style="color:var(--orange);margin-bottom:12px;font-size:20px;">Thank you! 🎉</h3>
+                            <p style="color:var(--text-secondary);">We'll get back to you within 24 hours.</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="contact-info" data-animate="fade-up" data-delay="150">
-                <div class="contact-info-card">
-                    <div class="contact-info-icon">📧</div>
-                    <h3>Email</h3>
-                    <a href="mailto:phatnguyen091006@gmail.com">phatnguyen091006@gmail.com</a>
-                </div>
-                <div class="contact-info-card">
-                    <div class="contact-info-icon">💬</div>
-                    <h3>Chat</h3>
-                    <p>Use the chat bubble in the corner — our AI assistant can help you instantly.</p>
-                </div>
-                <div class="contact-info-card">
-                    <div class="contact-info-icon">🌏</div>
-                    <h3>Location</h3>
-                    <p>Based in Melbourne, Australia.</p>
-                </div>
-                <div class="contact-info-card">
-                    <div class="contact-info-icon">🔗</div>
-                    <h3>Socials</h3>
-                    <div class="contact-socials">
-                        <a href="#">LinkedIn</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
+                <div class="contact-info" data-animate="fade-up">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">📧</div>
+                        <h3>Email</h3>
+                        <a href="mailto:phatnguyen091006@gmail.com">phatnguyen091006@gmail.com</a>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">💬</div>
+                        <h3>AI Chat</h3>
+                        <p>Use the chat bubble in the corner for instant answers from our AI assistant.</p>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Based in Melbourne, Australia.<br>Serving the Greater Melbourne area.</p>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">🔗</div>
+                        <h3>Connect</h3>
+                        <div class="contact-socials">
+                            <a href="#">LinkedIn</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">Instagram</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-bottom">
-            <div class="footer-bottom-inner">
-                <div class="footer-logo">
-                    <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M16 2L2 9L16 16L30 9L16 2Z" fill="url(#logo-grad2)" opacity="0.9"/><path d="M2 23L16 30L30 23" stroke="url(#logo-grad2)" stroke-width="2" fill="none" opacity="0.6"/><path d="M2 16L16 23L30 16" stroke="url(#logo-grad2)" stroke-width="2" fill="none" opacity="0.8"/><defs><linearGradient id="logo-grad2" x1="2" y1="2" x2="30" y2="30"><stop offset="0%" stop-color="#6C63FF"/><stop offset="100%" stop-color="#A78BFA"/></linearGradient></defs></svg>
-                    <span class="footer-logo-text">AEONLABS</span>
-                </div>
-                <div class="footer-links">
-                    <a href="services.html">Services</a>
-                    <a href="results.html">Results</a>
-                    <a href="insights.html">Insights</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <p class="footer-copy">&copy; 2026 AEONLABS. All rights reserved.</p>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo"><div class="nav-logo-icon" style="width:32px;height:32px;border-radius:8px;font-size:13px;">A</div><span>AEONLABS</span></div>
+                <div class="footer-links"><a href="services.html">Services</a><a href="case-studies.html">Case Studies</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+                <p class="footer-copy">&copy; 2026 AEONLABS</p>
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
-    <script src="chatbot.js"></script>
+    <script src="script.js"></script><script src="spline-loader.js"></script><script src="chatbot.js"></script>
 </body>
 </html>
