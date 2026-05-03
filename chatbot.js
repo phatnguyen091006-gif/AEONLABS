@@ -300,7 +300,7 @@ function init(){
       submitBtn.textContent='Sending...';
       submitBtn.disabled=true;
       // Send to n8n webhook (replace URL with your n8n endpoint)
-      var N8N_WEBHOOK = 'YOUR_N8N_WEBHOOK_URL_HERE';
+      var N8N_WEBHOOK = 'https://ndrwngvn.app.n8n.cloud/webhook-test/184c3378-27d5-4062-9d4d-dcf4001340c4';
       fetch(N8N_WEBHOOK,{
         method:'POST',
         headers:{'Content-Type':'application/json'},

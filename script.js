@@ -56,7 +56,7 @@ function initScrollAnimations() {
 }
 
 /* --- n8n Webhook --- */
-var N8N_WEBHOOK = 'YOUR_N8N_WEBHOOK_URL_HERE';
+var N8N_WEBHOOK = 'https://ndrwngvn.app.n8n.cloud/webhook-test/184c3378-27d5-4062-9d4d-dcf4001340c4';
 
 function sendToWebhook(payload) {
     return fetch(N8N_WEBHOOK, {
