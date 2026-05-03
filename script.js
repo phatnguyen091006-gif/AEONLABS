@@ -56,7 +56,7 @@ function initScrollAnimations() {
 }
 
 /* --- n8n Webhook --- */
-var N8N_WEBHOOK = 'https://ndrwngvn.app.n8n.cloud/webhook-test/184c3378-27d5-4062-9d4d-dcf4001340c4';
+var N8N_WEBHOOK = 'https://ndrwngvn.app.n8n.cloud/webhook-test/41ae5228-7319-481c-8669-f27e677d00c5';
 
 function sendToWebhook(payload) {
     return fetch(N8N_WEBHOOK, {
