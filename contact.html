@@ -38,29 +38,46 @@
                 <div class="contact-form" data-animate="fade-up">
                     <h2>Send Us a Message</h2>
                     <div class="native-form-container">
-                        <form id="contact-form">
-                            <div class="form-group"><input type="text" id="c-name" placeholder="Your name *" required></div>
-                            <div class="form-group"><input type="email" id="c-email" placeholder="Email address *" required></div>
-                            <div class="form-group"><input type="text" id="c-company" placeholder="Company name"></div>
+                        <form id="contact-form" novalidate>
                             <div class="form-group">
-                                <select id="c-service">
-                                    <option value="">Select a module...</option>
-                                    <option>Neural Audience Engine</option>
-                                    <option>Autonomous Content Pipeline</option>
-                                    <option>Conversational Conversion</option>
-                                    <option>Predictive Market Radar</option>
-                                    <option>Autonomous Ad Orchestration</option>
-                                    <option>Attribution Oracle</option>
-                                    <option>Full AEON Stack</option>
-                                    <option>Not sure — need advice</option>
+                                <label for="c-name">Full Name *</label>
+                                <input type="text" id="c-name" name="name" placeholder="Your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-email">Email Address *</label>
+                                <input type="email" id="c-email" name="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-phone">Phone Number</label>
+                                <input type="tel" id="c-phone" name="phone" placeholder="+61 4XX XXX XXX">
+                            </div>
+                            <div class="form-group">
+                                <label for="c-service">Service You're Interested In *</label>
+                                <select id="c-service" name="service" required>
+                                    <option value="" disabled selected>Select a module...</option>
+                                    <option value="Neural Audience Engine">Neural Audience Engine</option>
+                                    <option value="Autonomous Content Pipeline">Autonomous Content Pipeline</option>
+                                    <option value="Conversational Conversion">Conversational Conversion</option>
+                                    <option value="Predictive Market Radar">Predictive Market Radar</option>
+                                    <option value="Autonomous Ad Orchestration">Autonomous Ad Orchestration</option>
+                                    <option value="Attribution Oracle">Attribution Oracle</option>
+                                    <option value="Full AEON Stack">Full AEON Stack</option>
+                                    <option value="Not sure — need advice">Not sure — need advice</option>
                                 </select>
                             </div>
-                            <div class="form-group"><textarea id="c-message" rows="4" placeholder="Tell us about your business goals..."></textarea></div>
+                            <div class="form-group">
+                                <label for="c-message">Message</label>
+                                <textarea id="c-message" name="message" rows="4" placeholder="Tell us about your business and goals..."></textarea>
+                            </div>
                             <button type="submit" class="form-submit" id="contact-submit"><span>Send Message</span></button>
                         </form>
+                        <div class="form-error" id="form-error">
+                            Something went wrong. Please try again or email us at
+                            <a href="mailto:phatnguyen091006@gmail.com">phatnguyen091006@gmail.com</a>
+                        </div>
                         <div id="form-success" style="display:none;text-align:center;padding:40px;">
                             <h3 style="color:var(--orange);margin-bottom:12px;font-size:20px;">Thank you! 🎉</h3>
-                            <p style="color:var(--text-secondary);">We'll get back to you within 24 hours.</p>
+                            <p style="color:var(--text-secondary);">We've received your enquiry and will be in touch within 24 hours.<br>Check your inbox for a confirmation email.</p>
                         </div>
                     </div>
                 </div>

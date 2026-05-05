@@ -55,11 +55,11 @@ function initScrollAnimations() {
     elements.forEach(el => observer.observe(el));
 }
 
-/* --- n8n Webhook --- */
-var N8N_WEBHOOK = 'https://ndrwngvn.app.n8n.cloud/webhook-test/41ae5228-7319-481c-8669-f27e677d00c5';
+/* --- Make Webhook --- */
+var MAKE_WEBHOOK = 'https://hook.eu1.make.com/wohza8zeumeslwma74esp8wqybpzurjv';
 
 function sendToWebhook(payload) {
-    return fetch(N8N_WEBHOOK, {
+    return fetch(MAKE_WEBHOOK, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -71,30 +71,43 @@ function initContactForm() {
     const form = document.getElementById('contact-form');
     if (!form) return;
 
+    const errorMsg = document.getElementById('form-error');
+
     form.addEventListener('submit', function (e) {
         e.preventDefault();
         const name = document.getElementById('c-name').value.trim();
         const email = document.getElementById('c-email').value.trim();
-        const company = document.getElementById('c-company').value.trim();
+        const phone = document.getElementById('c-phone') ? document.getElementById('c-phone').value.trim() : '';
         const service = document.getElementById('c-service').value;
         const message = document.getElementById('c-message').value.trim();
 
-        if (!name || !email) return;
+        if (!name || !email || !service) {
+            alert('Please fill in your name, email, and select a service.');
+            return;
+        }
 
         const btn = document.getElementById('contact-submit');
         btn.querySelector('span').textContent = 'Sending...';
         btn.disabled = true;
+        if (errorMsg) errorMsg.style.display = 'none';
 
         sendToWebhook({
-            name, email, company, service, message,
+            name, email, phone, service, message,
+            submittedAt: new Date().toISOString(),
             source: 'AEONLABS Website — Contact Form',
             page: window.location.href
-        }).then(function() {
-            form.style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
-        }).catch(function() {
-            form.style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
+        }).then(function(response) {
+            if (response.ok) {
+                form.style.display = 'none';
+                document.getElementById('form-success').style.display = 'block';
+            } else {
+                throw new Error('Server responded with ' + response.status);
+            }
+        }).catch(function(err) {
+            console.error('Submission error:', err);
+            if (errorMsg) errorMsg.style.display = 'block';
+            btn.querySelector('span').textContent = 'Send Message';
+            btn.disabled = false;
         });
     });
 }
